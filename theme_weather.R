@@ -7,8 +7,9 @@ theme_set(theme_bw() +
                   plot.title = element_text(size = 11, face = "bold"),
                   plot.caption = element_text(hjust=1)))
 
+# devtools::source_url("https://github.com/juanchiem/R-sources/blob/master/theme_weather.R?raw=TRUE")
 # myplot<-ggplot(data=data.frame(a=c(1,2,3), b=c(2,3,4)), aes(x=a, y=b)) + geom_line()
-#
+# myplot
 # myplot + theme(panel.background = element_rect(fill = '#f7fcf9', colour = 'red'))
 
 # ht <- function(d, n=6){
@@ -16,5 +17,3 @@ theme_set(theme_bw() +
 #   tail(d, n, addrownums = TRUE)
 #         }
 # ht(mtcars, 4)
-
-devtools::source_url("https://github.com/tonybreyal/Blog-Reference-Functions/blob/master/R/bingSearchXScraper/bingSearchXScraper.R?raw=TRUE")
