@@ -16,7 +16,7 @@ devtools::source_url("https://github.com/juanchiem/R-sources-Juan/blob/master/as
 
 ## Rendimiento ajustado por humedad 
 ## si la humedad de la muestra fue obtenida por gravimetria humedo-seco, rinde_aj2 devuelve la humedad calculada y 
-## el el rendimiento (kg/h) ajustado a la humedad deseada
+## el el rendimiento (kg/ha) ajustado a la humedad deseada
 
 devtools::source_url("https://github.com/juanchiem/R-sources-Juan/blob/master/rend_aj.R?raw=TRUE")
 
