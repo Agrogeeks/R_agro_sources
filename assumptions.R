@@ -1,3 +1,8 @@
+RequiredPackages <- c("olsrr","MASS")
+for (i in RequiredPackages) { #Installs packages if not yet installed
+  if (!require(i, character.only = TRUE)) install.packages(i)
+}
+
 assump <- function(model)
 {
   par(mfrow=c(3,1), 
