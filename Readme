@@ -14,4 +14,4 @@ devtools::source_url("https://github.com/juanchiem/R-sources-Juan/blob/master/as
 # mod <- lm(dist ~ speed, data = cars)
 # assump(mod)
 
-
+devtools::source_url("https://github.com/juanchiem/R-sources-Juan/blob/master/rend_aj.R?raw=TRUE")
