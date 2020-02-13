@@ -7,9 +7,9 @@ rinde_aj <- function( # kg/ha
   h_deseada   # %
 ){ 
   area_cosecha = surcos*largo*dist_surcos/100
-  contenido_h = peso_tot*h_muestra
+  contenido_h = peso_tot*h_muestra/100
   rinde_s = ((peso_tot-contenido_h)/area_cosecha)*10 
-  rinde_aj = round(rinde_s/(1-(h_deseada)), 0) 
+  rinde_aj = round(rinde_s/(1-(h_deseada/100)), 0) 
   rinde_aj
 }
 
