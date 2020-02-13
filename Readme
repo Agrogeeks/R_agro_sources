@@ -10,11 +10,12 @@ p + theme_juan(9, "bottom")
 ### Linear model assumptions
 
 devtools::source_url("https://github.com/juanchiem/R-sources-Juan/blob/master/assumptions.R?raw=TRUE")
-
-# mod <- lm(dist ~ speed, data = cars)
-# assump(mod)
+mod <- lm(dist ~ speed, data = cars)
+assump(mod)
 
 ## Rendimiento ajustado por humedad 
+
+
 ## si la humedad de la muestra fue obtenida por gravimetria humedo-seco, rinde_aj2 devuelve la humedad calculada y 
 ## el el rendimiento (kg/ha) ajustado a la humedad deseada
 
@@ -38,3 +39,4 @@ dat %>%
                         peso_tot = peso_tot,   # peso muestra (g)
                         h_deseada = 13.5)))%>% # humedad deseada (%)
   unnest()
+
