@@ -35,17 +35,6 @@ dat %>%
                         peso_tot = peso_tot,   # peso muestra (g)
                         h_deseada = 13.5)) # humedad deseada (%)
 
-
-
-
-rinde_aj(surcos = 3,
-         largo = 4 ,      # m
-         dist_surcos = 17.5, # cm
-         h_muestra = 10,       # %
-         peso_tot = 1297,   # g
-         h_deseada = 12  # %
-)
-
 ## Si la humedad de la muestra fue obtenida por gravimetria humedo-seco, rinde_aj2 devuelve la humedad calculada y 
 ## el rendimiento (kg/ha) ajustado a la humedad deseada
 
