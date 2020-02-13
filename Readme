@@ -29,12 +29,12 @@ dat <- tibble::tribble(
 library(tidyverse)
 dat %>% 
   rowwise() %>% 
-  mutate(list(rinde_aj2(surcos = 4,
-                        largo = 3,      # m
-                        dist_surcos = 17.5, # cm
-                        peso_h = peso_h,     # g
-                        peso_s = peso_s,     # g
-                        tara_s = 2,       # g
-                        peso_tot = peso_tot,   # g
-                        h_deseada = 13.5)))%>% # %
+  mutate(list(rinde_aj2(surcos = 4,   # surcos cosechados
+                        largo = 3,      # largo de cada surco (m) 
+                        dist_surcos = 17.5, # distancia entresurco (cm) 
+                        peso_h = peso_h,     # peso alicuota humeda (g) 
+                        peso_s = peso_s,     # peso alicuota a 0% de humedad (g)
+                        tara_s = 2,       # peso de recipiente (g)
+                        peso_tot = peso_tot,   # peso muestra (g)
+                        h_deseada = 13.5)))%>% # humedad deseada (%)
   unnest()
