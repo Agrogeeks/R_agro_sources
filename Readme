@@ -20,20 +20,21 @@ library(tidyverse)
 ## Si la humedad de la muestra fue obtenida de manera directa (higrómetro), rinde_aj devuelve 
 ## el rendimiento (kg/ha) ajustado a la humedad deseada
 
+library(tidyverse)
 dat <- tibble::tribble(
-  ~par, ~trt, ~bq, ~peso_tot, ~h_muestra, 
-  "1.1",    1,   1,      1000,   10,    
-  "2.1",    2,   1,      1000,   16,
-  "3.1",    3,   1,      1000,   13.5)
-
+  ~muestra, ~peso_tot, ~h_muestra, 
+  1,      1000,   10,    
+  2,      1000,   12,
+  3,      1000,   14)
 
 dat %>% 
-  mutate(rinde_aj = rinde_aj(surcos = 4,   # surcos cosechados
-                        largo = 3,      # largo de cada surco (m) 
-                        dist_surcos = 17.5, # distancia entresurco (cm) 
-                        h_muestra = h_muestra,
-                        peso_tot = peso_tot,   # peso muestra (g)
-                        h_deseada = 13.5)) # humedad deseada (%)
+  mutate(rinde_aj = rinde_aj(surcos = 1,   # surcos cosechados
+                             largo = 5.714,      # largo de cada surco (m) 
+                             dist_surcos = 17.5, # distancia entresurco (cm) 
+                             h_muestra = h_muestra,
+                             peso_tot = peso_tot,   # peso muestra (g)
+                             h_deseada = 12)) # humedad deseada (%)
+
 
 ## Si la humedad de la muestra fue obtenida por gravimetria humedo-seco, rinde_aj2 devuelve la humedad calculada y 
 ## el rendimiento (kg/ha) ajustado a la humedad deseada
