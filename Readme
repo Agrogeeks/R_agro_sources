@@ -15,30 +15,11 @@ assump(mod)
 
 ## Rendimiento ajustado por humedad 
 
-
-## si la humedad de la muestra fue obtenida por gravimetria humedo-seco, rinde_aj2 devuelve la humedad calculada y 
-## el el rendimiento (kg/ha) ajustado a la humedad deseada
-
 devtools::source_url("https://github.com/juanchiem/R-sources-Juan/blob/master/rend_aj.R?raw=TRUE")
-
-dat <- tibble::tribble(
-   ~par, ~trt, ~bq, ~peso_tot, ~peso_h, ~peso_s, 
-  "1.1",    1,   1,      1297,   48.92,   47.85, 
-  "2.1",    2,   1,      1358,   43.22,   42.62, 
-  "3.1",    3,   1,      1176,    31.2,    30.8)
-
 library(tidyverse)
-dat %>% 
-  rowwise() %>% 
-  mutate(list(rinde_aj2(surcos = 4,   # surcos cosechados
-                        largo = 3,      # largo de cada surco (m) 
-                        dist_surcos = 17.5, # distancia entresurco (cm) 
-                        peso_h = peso_h,     # peso alicuota humeda (g) 
-                        peso_s = peso_s,     # peso alicuota a 0% de humedad (g)
-                        tara_s = 2,       # peso de recipiente (g)
-                        peso_tot = peso_tot,   # peso muestra (g)
-                        h_deseada = 13.5)))%>% # humedad deseada (%)
-  unnest()
+
+## Si la humedad de la muestra fue obtenida de manera directa (higrómetro), rinde_aj devuelve 
+## el rendimiento (kg/ha) ajustado a la humedad deseada
 
 dat <- tibble::tribble(
    ~par, ~trt, ~bq, ~peso_tot, ~h_muestra, 
@@ -53,3 +34,26 @@ rinde_aj(surcos = 3,
          peso_tot = 1297,   # g
          h_deseada = 12  # %
 )
+
+## Si la humedad de la muestra fue obtenida por gravimetria humedo-seco, rinde_aj2 devuelve la humedad calculada y 
+## el rendimiento (kg/ha) ajustado a la humedad deseada
+
+dat2 <- tibble::tribble(
+   ~par, ~trt, ~bq, ~peso_tot, ~peso_h, ~peso_s, 
+  "1.1",    1,   1,      1297,   48.92,   47.85, 
+  "2.1",    2,   1,      1358,   43.22,   42.62, 
+  "3.1",    3,   1,      1176,    31.2,    30.8)
+
+dat2 %>% 
+  rowwise() %>% 
+  mutate(list(rinde_aj2(surcos = 4,   # surcos cosechados
+                        largo = 3,      # largo de cada surco (m) 
+                        dist_surcos = 17.5, # distancia entresurco (cm) 
+                        peso_h = peso_h,     # peso alicuota humeda (g) 
+                        peso_s = peso_s,     # peso alicuota a 0% de humedad (g)
+                        tara_s = 2,       # peso de recipiente (g)
+                        peso_tot = peso_tot,   # peso muestra (g)
+                        h_deseada = 13.5)))%>% # humedad deseada (%)
+  unnest()
+
+
