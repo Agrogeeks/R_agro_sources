@@ -1,8 +1,16 @@
-Some R sources
+# Personal ggplot theme: 
 
 devtools::source_url("https://github.com/juanchiem/R-sources/blob/master/theme_weather.R?raw=TRUE")
 
 # p<-ggplot(data=NULL, aes(x=1:3, y=4:6)) + geom_line()
 # p
 # p + theme(panel.background = element_rect(fill = '#f7fcf9'))
+
+# Linear model assumptions
+
+devtools::source_url("https://github.com/juanchiem/R-sources-Juan/blob/master/assumptions.R?raw=TRUE")
+
+# mod <- lm(dist ~ speed, data = cars)
+# assump(mod)
+
 
