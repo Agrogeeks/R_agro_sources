@@ -12,6 +12,8 @@ assump <- function(model)
        main = paste("P=", round(shapiro.test(model$residuals)$"p.value",3)))
   plot(model, which=3, 
        main=paste("P=",main= round(olsrr::ols_test_score(model)$p,3)))
-  MASS::boxcox(model)
+  bc <- MASS::boxcox(model)
+  lambda <- bc$x[which.max(bc$y)]
   layout(1)
+  print(paste("Box-Cox suggested transformation:", round(lambda, 1)))
 }

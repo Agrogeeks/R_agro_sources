@@ -1,4 +1,4 @@
-### Personal ggplot theme: 
+### ggplot theme: 
 library(ggplot2)
 p <- ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, col=Species)) + 
   geom_point()
@@ -13,17 +13,18 @@ devtools::source_url("https://github.com/juanchiem/R-sources-Juan/blob/master/as
 mod <- lm(dist ~ speed, data = cars)
 assump(mod)
 
+mod1 <- lm(dist^0.5 ~ speed, data = cars)
+assump(mod1)
+
 ## Rendimiento ajustado por humedad 
+
+## A menudo se estima el rendimiento de los cultivos (kg/ha) por medio de muestras (g) en áreas reducidas (m²) 
+
 devtools::source_url("https://github.com/juanchiem/R-sources-Juan/blob/master/rend_aj.R?raw=TRUE")
 library(tidyverse)
 
-## Rendimiento ajustado por humedad 
-devtools::source_url("https://github.com/juanchiem/R-sources-Juan/blob/master/rend_aj.R?raw=TRUE")
-
-## Si la humedad de la muestra fue obtenida de manera directa (higrómetro), rinde_aj devuelve 
-## el rendimiento (kg/ha) ajustado a la humedad deseada
-
-library(tidyverse)
+## Si la humedad de la muestra (%) fue obtenida de manera directa (higrómetro), 
+## "rinde_aj" devuelve  el rendimiento (kg/ha) ajustado a la humedad deseada 
 
 dat <- tibble::tribble(
   ~muestra, ~peso_tot, ~h_muestra, 
@@ -61,5 +62,3 @@ dat2 %>%
                         peso_tot = peso_tot,   # peso muestra (g)
                         h_deseada = 13.5)))%>% # humedad deseada (%)
   unnest()
-
-
