@@ -17,10 +17,14 @@ assump(mod)
 devtools::source_url("https://github.com/juanchiem/R-sources-Juan/blob/master/rend_aj.R?raw=TRUE")
 library(tidyverse)
 
+## Rendimiento ajustado por humedad 
+devtools::source_url("https://github.com/juanchiem/R-sources-Juan/blob/master/rend_aj.R?raw=TRUE")
+
 ## Si la humedad de la muestra fue obtenida de manera directa (higrómetro), rinde_aj devuelve 
 ## el rendimiento (kg/ha) ajustado a la humedad deseada
 
 library(tidyverse)
+
 dat <- tibble::tribble(
   ~muestra, ~peso_tot, ~h_muestra, 
   1,      1000,   10,    
@@ -42,9 +46,9 @@ dat %>%
 
 dat2 <- tibble::tribble(
   ~muestra, ~peso_tot, ~peso_h, ~peso_s, 
-  1,   1297,   48.92,   47.85, 
-  2,   1358,   43.22,   42.62, 
-  3,   1176,    31.2,    30.8)
+  1,   1000,   48.92,   47.85, 
+  2,   1000,   43.22,   42.62, 
+  3,   1000,    31.2,    30.8)
 
 dat2 %>% 
   rowwise() %>% 
@@ -57,4 +61,5 @@ dat2 %>%
                         peso_tot = peso_tot,   # peso muestra (g)
                         h_deseada = 13.5)))%>% # humedad deseada (%)
   unnest()
+
 
