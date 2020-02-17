@@ -18,4 +18,3 @@ assump <- function(model)
   output(print(paste("Box-Cox suggested transformation:", round(lambda, 1))))
   return(invisible(NULL))
 }
-detach(MASS) 
