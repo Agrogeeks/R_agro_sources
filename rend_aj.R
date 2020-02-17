@@ -13,7 +13,7 @@ rinde_aj <- function( # kg/ha
 }
 
 rinde_aj2 <- function( # kg/ha
-  m_muestra,      # m
+  m_muestra, # m
   dist_surcos, # cm
   peso_h,     # g
   peso_s,     # g
