@@ -9,7 +9,7 @@ assump <- function(model)
       oma = c(2, 2, 4, 2),
       mar = c(4, 10, 4, 10)) 
   plot(model, which=2, 
-       main = paste("P=", round(shapiro.test(model$residuals)$"p.value",3)))
+       main = paste("P=", round(MASS::shapiro.test(model$residuals)$"p.value",3)))
   plot(model, which=3, 
        main=paste("P=",main= round(olsrr::ols_test_score(model)$p,3)))
   bc <- MASS::boxcox(model)
@@ -18,3 +18,4 @@ assump <- function(model)
   output(print(paste("Box-Cox suggested transformation:", round(lambda, 1))))
   return(invisible(NULL))
 }
+detach(MASS) 
