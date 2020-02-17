@@ -15,5 +15,5 @@ assump <- function(model)
   bc <- MASS::boxcox(model)
   lambda <- bc$x[which.max(bc$y)]
   layout(1)
-  output(print(paste("Box-Cox suggested transformation:", round(lambda, 1))))
+  print(paste("Box-Cox suggested transformation:", round(lambda, 1)))
 }
