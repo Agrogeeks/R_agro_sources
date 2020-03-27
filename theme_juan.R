@@ -9,7 +9,7 @@ theme_juan <- function (base_size = base_size, legen_pos = legen_pos) {
       strip.text = element_text(size = rel(1.1)),#,face = "bold"),
       
       # panel.border = element_blank(),
-      axis.line    = element_line(color='black'),
+      axis.line    = element_line(color='grey'),
       
       panel.grid.minor = element_blank(),
       # panel.grid.major = element_blank(),
