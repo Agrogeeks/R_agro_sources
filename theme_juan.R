@@ -19,7 +19,7 @@ theme_juan <- function (base_size = base_size, legen_pos = legen_pos) {
       # panel.grid.major.x = element_line(linetype =  "dotted") ,
       # legend
       legend.position=legen_pos,
-      panel.spacing = unit(1,"lines")
+      panel.spacing = unit(0,"lines")
     )   
 }
 
